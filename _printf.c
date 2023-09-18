@@ -8,7 +8,7 @@
  * @format: format string.
  * Return: Number of characters printed.
  */
-/*int _printf(const char *format, ...)
+int _printf(const char *format, ...)
 {
 va_list list;
 int buff_ind = 0, chars_printed = 0;
@@ -55,4 +55,4 @@ write(1, buffer, buff_ind);
 chars_printed += buff_ind;
 }
 return (chars_printed);
-}*/
+}
