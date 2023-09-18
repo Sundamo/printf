@@ -1,6 +1,8 @@
 #include "main.h"
 #include <stdio.h>
 #include <unistd.h>
+#define BUFF_SIZE 1024 /* Define the buffer size */
+
 /**
  * _printf - Printf custom function.
  * @format: format string.
