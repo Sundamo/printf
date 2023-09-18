@@ -31,7 +31,7 @@ else
 {
 putchar('%');
 putchar(format[idx]);
-count += 2;
+count ++;
 }
 }
 else
