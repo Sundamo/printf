@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+#include <stdarg.h>
 #include <unistd.h>
 #define BUFF_SIZE 1024 /* Define the buffer size */
 
@@ -8,7 +9,7 @@
  * @format: format string.
  * Return: Number of characters printed.
  */
-/*int _printf(const char *format, ...)
+int _printf(const char *format, ...)
 {
 va_list list;
 int buff_ind = 0, chars_printed = 0;
@@ -55,4 +56,4 @@ write(1, buffer, buff_ind);
 chars_printed += buff_ind;
 }
 return (chars_printed);
-}*/
+}
