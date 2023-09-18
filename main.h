@@ -1,8 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
-#include <stdarg.h>
-#include <stdio.h>
-#include <unistd.h>
+#define BUFF_SIZE 1024 /* Define the buffer size */
 
 int _putchar(char c);
 int _printf(const char *format, ...);
