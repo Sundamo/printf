@@ -11,7 +11,8 @@
 int _printf(const char *format, ...)
 {
 va_list list;
-int buff_ind = 0, chars_printed = 0;
+int buff_ind = 0;
+chars_printed = 0;
 char buffer[BUFF_SIZE];
 if (format == NULL)
 return (-1);
