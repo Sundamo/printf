@@ -3,64 +3,6 @@
 #include <unistd.h>
 #include "main.h"
 /**
- * _printf - A custom implementation of printf.
- * @format: The format string.
- * Return: The number of characters printed.
- */
-int _printf(const char *format, ...)
-{
-va_list args;
-int chars_printed = 0;
-int idx = 0;
-va_start(args, format);
-while (format[idx] != '\0')
-{
-if (format[idx] == '%')
-{
-idx++;
-if (format[idx] == '\0')
-{
-break;
-}
-if (format[idx] == 'd' || format[idx] == 'i')
-{
-chars_printed += integer_formatter(args);
-}
-else
-{
-format++;
-switch (*format)
-{
-case 'c':
-chars_printed += format_character(args);
-break;
-case 's':
-chars_printed += string_printer(args);
-break;
-case '%':
-chars_printed += percent_formatter(args);
-break;
-default:
-write(1, format - 1, 1);
-write(1, format, 1);
-chars_printed += 2;
-break;
-}
-}
-format++;
-}
-}
-else
-{
-write(1, &format[idx], 1);
-chars_printed++;
-idx++;
-}
-}
-va_end(args);
-return (chars_printed);
-}
-/**
  * format_character - Formats and prints a character.
  * @args: The va_list containing the character.
  * Return: The number of characters printed.
@@ -136,4 +78,53 @@ rev /= 10;
 count++;
 }
 return (count);
+}
+/**
+ * _printf - A custom implementation of printf.
+ * @format: The format string.
+ * Return: The number of characters printed.
+ */
+int _printf(const char *format, ...)
+{
+va_list args;
+int chars_printed = 0;
+va_start(args, format);
+while (*format)
+{
+if (*format == '%')
+{
+format++;
+if (*format == '\0')
+break;
+switch (*format)
+{
+case 'c':
+chars_printed += format_character(args);
+break;
+case 's':
+chars_printed += string_printer(args);
+break;
+case '%':
+chars_printed += percent_formatter(args);
+break;
+case 'd':
+case 'i':
+chars_printed += integer_formatter(args);
+break;
+default:
+write(1, format - 1, 1);
+write(1, format, 1);
+chars_printed += 2;
+break;
+}
+}
+else
+{
+write(1, format, 1);
+chars_printed++;
+}
+format++;
+}
+va_end(args);
+return (chars_printed);
 }
