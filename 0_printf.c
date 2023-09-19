@@ -49,6 +49,7 @@ break;
 }
 format++;
 }
+}
 else
 {
 write(1, &format[idx], 1);
