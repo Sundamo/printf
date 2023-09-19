@@ -14,4 +14,4 @@ Printing an integer number: Input: _printf("2 + 2 is equal to %d.", 4); Output: 
 
 Printing a binary: Input: _printf("98 in binary is [%b]", 98); Output: 98 in binary is [1100010]
 
-Authors Oluwadamilare Omosanya @Sundamo and Memunat Elegushi @Auspicious
+Authors Oluwadamilare Omosanya @Sundamo and Memunat Elegushi @Auspicious-1ife.
