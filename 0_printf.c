@@ -18,6 +18,10 @@ while (format[idx] != '\0')
 if (format[idx] == '%')
 {
 idx++;
+if (format[idx] == '\0')
+{
+break;
+}
 if (format[idx] == 'd' || format[idx] == 'i')
 {
 chars_printed += integer_formatter(args);
